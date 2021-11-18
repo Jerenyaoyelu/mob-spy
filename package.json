@@ -1,0 +1,17 @@
+{
+  "name": "responsive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext .ts",
+    "build": "tsc"
+  },
+  "author": "jeren",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^4.5.2"
+  },
+  "devDependencies": {}
+}
