@@ -1,6 +1,6 @@
 {
   "name": "mob-spy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "./dist/index.js",
   "scripts": {
@@ -18,5 +18,9 @@
     "detect mobile",
     "detect orientation"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jerenyaoyelu/mob-spy"
+  },
   "devDependencies": {}
 }
