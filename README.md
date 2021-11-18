@@ -29,10 +29,10 @@ console.log(mob.orientation);
 
 #### Attributes
 
-| Attribute   | Description                                       | Type    | Default |
-| ----------- | ------------------------------------------------- | ------- | ------- |
-| isPc        | indicates it is PC or mobile                      | Boolean | true    |
-| orientation | indicates the orientation of the screen in mobile | String  | ""      |
+| Attribute   | Description                                       | Type    | Default | Available Vaules   |
+| ----------- | ------------------------------------------------- | ------- | ------- | ------------------ |
+| isPc        | indicates it is PC or mobile                      | Boolean | true    | true/false         |
+| orientation | indicates the orientation of the screen in mobile | String  | ""      | portrait/landscape |
 
 # License
 
