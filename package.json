@@ -13,5 +13,10 @@
   "dependencies": {
     "typescript": "^4.5.2"
   },
+  "keywords": [
+    "responsive",
+    "detect mobile",
+    "detect orientation"
+  ],
   "devDependencies": {}
 }
