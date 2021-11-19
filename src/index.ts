@@ -1,6 +1,6 @@
 export default class DeviceDetector {
-  isPc: null | boolean;
-  orientation: string;
+  private isPc: boolean;
+  private orientation: string;
 
   constructor() {
     this.isPc = true;
@@ -8,11 +8,29 @@ export default class DeviceDetector {
     this.__init();
   }
 
-  __init(): void {
+  get getIsPc(): boolean {
+    return this.isPc;
+  }
+
+  get getOrientation(): string {
+    return this.orientation;
+  }
+
+  private __init(): void {
+    this.detect();
+  }
+
+  onWindowResize(): void {
+    // 初始化属性
+    this.isPc = true;
+    this.orientation = "";
+    this.detect();
+  }
+
+  private detect(): void {
     this.detectSize();
     if (!this.isPc) {
       this.detectOrientation();
-      window.onresize = this.detectOrientation;
       if (!this.orientation) {
         console.log("Oops~orientation检测出错了");
       }

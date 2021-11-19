@@ -6,7 +6,30 @@ var DeviceDetector = /** @class */ (function () {
         this.orientation = "";
         this.__init();
     }
+    Object.defineProperty(DeviceDetector.prototype, "getIsPc", {
+        get: function () {
+            return this.isPc;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(DeviceDetector.prototype, "getOrientation", {
+        get: function () {
+            return this.orientation;
+        },
+        enumerable: false,
+        configurable: true
+    });
     DeviceDetector.prototype.__init = function () {
+        this.detect();
+    };
+    DeviceDetector.prototype.onWindowResize = function () {
+        // 初始化属性
+        this.isPc = true;
+        this.orientation = "";
+        this.detect();
+    };
+    DeviceDetector.prototype.detect = function () {
         this.detectSize();
         if (!this.isPc) {
             this.detectOrientation();

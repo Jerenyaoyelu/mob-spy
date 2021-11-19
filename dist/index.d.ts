@@ -1,8 +1,12 @@
 export default class DeviceDetector {
-    isPc: null | boolean;
-    orientation: string;
+    private isPc;
+    private orientation;
     constructor();
-    __init(): void;
+    get getIsPc(): boolean;
+    get getOrientation(): string;
+    private __init;
+    onWindowResize(): void;
+    private detect;
     private detectSize;
     private detectOrientation;
 }
