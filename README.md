@@ -46,6 +46,18 @@ window.onresize = () => {
   // portrait or landscape
   console.log(mob.getOrientation);
 };
+
+// 或者
+window.addEventListener("resize", () => {
+  mob.onWindowResize();
+
+  // log true in PC, and log false in mobile/ipad/pad
+  console.log(mob.getIsPc);
+
+  // log the orientation of the screen when it is in mobile/ipad/pad
+  // portrait or landscape
+  console.log(mob.getOrientation);
+}
 ```
 
 #### Attributes

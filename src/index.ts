@@ -29,11 +29,9 @@ export default class DeviceDetector {
 
   private detect(): void {
     this.detectSize();
-    if (!this.isPc) {
-      this.detectOrientation();
-      if (!this.orientation) {
-        console.log("Oops~orientation检测出错了");
-      }
+    this.detectOrientation();
+    if (!this.orientation) {
+      console.log("Oops~orientation检测出错了");
     }
   }
 
@@ -76,11 +74,17 @@ export default class DeviceDetector {
       angle = window.orientation; // 这个属性要被Deprecated了，但是移动设备screen.orientation不支持，它是全支持
     }
 
+    // angle represents how far the user has turned the device counterclockwise from the natural orientation.
+    // PC端 natural orientation是横着，故angle为0或者180
     if (
       angle !== undefined &&
       parseInt(String(angle), 10).toString() !== "NaN"
     ) {
-      this.orientation = [0, 180].includes(angle) ? "portrait" : "landscape";
+      if (this.isPc) {
+        this.orientation = [0, 180].includes(angle) ? "landscape" : "portrait";
+      } else {
+        this.orientation = [0, 180].includes(angle) ? "portrait" : "landscape";
+      }
     }
   }
 }
